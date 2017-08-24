@@ -23,6 +23,7 @@ The difference between them is that the one included in the enterprise edition i
 | `user`         | no       |  None   | Search parameters for user authentication. _see user table below_ |
 | `group`        | no       |  None   | Search parameters for user's group membership. _see group table below_ |
 | `chase_referrals` | no       |  True   | Boolean parameter to set whether to chase referrals. |
+| `ref_hop_limit`   | no       |  0      | The maximum number to refer Referrals recursively |
 
 #### LDAP x509 certificate validation policy (cert_policy)
 | value        | resulting behaviour |
@@ -64,6 +65,9 @@ logging = /path/to/st2auth.logging.conf
 api_url = https://myhost.example.com:9101
 debug = False
 ```
+#### Enable debugging mode
+To enable debugging, add `debug = True` to the `[system]` section of `st2.conf` configuration file.  Debug logs are found in `st2auth.log` file by default.
+
 
 ### Authenticating users against various schemas.
 
